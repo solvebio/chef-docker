@@ -8,6 +8,21 @@ class Chef
       # register with the resource resolution system
       provides :docker_container if Chef::Provider.respond_to?(:provides)
 
+      def load_current_resource
+        @current_resource = Chef::Resource::DockerContainer.new(@new_resource.name)
+        c ||= Docker::Container.get(new_resource.container_name) if container_created?
+        unless c.nil?
+          @current_resource.attach_stderr c.info['Config']['AttachStderr']
+          @current_resource.attach_stdin c.info['Config']['AttachStdin']
+          @current_resource.attach_stdout c.info['Config']['AttachStdout']
+          # current_resource.autoremove # FIXME?
+          @current_resource.binds c.info['HostConfig']['Binds'] # FIXME
+          # require 'pry' ; binding.pry
+          # ...
+          @current_resource.working_dir c.info['Config']['WorkingDir'] # FIXME
+        end
+      end
+
       ################
       # Helper methods
       ################
