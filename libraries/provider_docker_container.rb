@@ -16,10 +16,44 @@ class Chef
           @current_resource.attach_stdin c.info['Config']['AttachStdin']
           @current_resource.attach_stdout c.info['Config']['AttachStdout']
           # current_resource.autoremove # FIXME?
+
+          @current_resource.domainname c.info['Config']['Domainname']
+          # @current_resource.entrypoint c.info['Config']['Entrypoint']
+          @current_resource.env c.info['Config']['Env']
+          # @current_resource.exposed_ports c.info['Config']['ExposedPorts'] # FIXME
+          @current_resource.hostname c.info['Config']['Hostname']
+          @current_resource.mac_address c.info['Config']['MacAddress']
+          @current_resource.network_disabled c.info['Config']['NetworkDisabled']
+          @current_resource.open_stdin c.info['Config']['OpenStdin']
+          @current_resource.stdin_once c.info['Config']['StdinOnce']
+          @current_resource.tty c.info['Config']['Tty']
+          @current_resource.user c.info['Config']['User']
+          # @current_resource.volumes c.info['Config']['Volumes']
+          @current_resource.working_dir c.info['Config']['WorkingDir']
+
           @current_resource.binds c.info['HostConfig']['Binds'] # FIXME
+          @current_resource.cap_add c.info['HostConfig']['CapAdd']
+          @current_resource.cap_drop c.info['HostConfig']['CapDrop']
+          @current_resource.cgroup_parent c.info['HostConfig']['CgroupParent']
+          @current_resource.cpu_shares c.info['HostConfig']['CpuShares']
+          @current_resource.cpuset_cpus c.info['HostConfig']['CpusetCpus']
+          @current_resource.devices c.info['HostConfig']['Devices']
+          @current_resource.dns c.info['HostConfig']['Dns']
+          @current_resource.dns_search c.info['HostConfig']['DnsSearch']
+          @current_resource.extra_hosts c.info['HostConfig']['ExtraHosts']
+          @current_resource.links c.info['HostConfig']['Links']
+          @current_resource.log_config c.info['HostConfig']['LogConfig']
+          @current_resource.memory c.info['HostConfig']['Memory']
+          @current_resource.memory_swap c.info['HostConfig']['MemorySwap']
+          @current_resource.network_mode c.info['HostConfig']['NetworkMode']
+          @current_resource.privileged c.info['HostConfig']['Privileged']
+          # @current_resource.port_binding c.info['HostConfig']['PortBindings']
+          @current_resource.publish_all_ports c.info['HostConfig']['PublishAllPorts']
+          # @current_resource.restart_policy c.info['HostConfig']['RestartPolicy']
+          @current_resource.ulimits c.info['HostConfig']['Ulimits']
+          # @current_resource.volumes_from c.info['HostConfig']['VolumesFrom']
+
           # require 'pry' ; binding.pry
-          # ...
-          @current_resource.working_dir c.info['Config']['WorkingDir'] # FIXME
         end
       end
 

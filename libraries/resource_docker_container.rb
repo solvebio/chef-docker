@@ -19,6 +19,7 @@ class Chef
       attribute :cap_add, kind_of: [String, Array, NilClass], default: nil # FIXME: add validate proc
       attribute :cap_drop, kind_of: [String, Array, NilClass], default: nil # FIXME: add validate proc
       attribute :cgroup_parent, kind_of: String, default: '' # FIXME: add validate proc
+
       attribute :cpu_shares, kind_of: [Fixnum, NilClass], default: nil # FIXME: add validate proc
       attribute :cpuset_cpus, kind_of: String, default: '' # FIXME: add validate proc
       attribute :detach, kind_of: [TrueClass, FalseClass], default: true
