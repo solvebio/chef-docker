@@ -29,13 +29,13 @@ class Chef
       property :dns_search, [String, Array, nil], default: nil
       property :domain_name, String, default: ''
       property :entrypoint, [String, Array, nil], default: nil
-      property :env, [String, Array], default: nil
+      property :env, [String, Array, nil], default: nil
       property :extra_hosts, [String, Array, nil], default: nil
-      property :exposed_ports, Hash, default: nil
+      property :exposed_ports, [Hash, nil], default: nil
       property :force, [true, false], default: false
-      property :host, String, default: nil
-      property :host_name, String, default: nil
-      property :labels, [String, Array, Hash], default: nil
+      property :host, [String, nil], default: nil
+      property :host_name, [String, nil], default: nil
+      property :labels, [String, Array, Hash, nil], default: nil
       property :links, [String, Array, nil], default: nil # FIXME: add validate proc
       property :log_config, [Hash, nil], default: nil # FIXME: add validate proc and tests; to configure the resource, prefer log_driver/log_opts below
       property :log_driver, %w( json-file syslog journald gelf fluentd none ), default: nil
@@ -48,7 +48,7 @@ class Chef
       property :open_stdin, [true, false], default: false
       property :outfile, String, default: nil
       property :port, [String, Array], default: nil
-      property :port_bindings, [String, Array, Hash], default: nil
+      property :port_bindings, [String, Array, Hash, nil], default: nil
       property :privileged, [true, false], default: false
       property :publish_all_ports, [true, false], default: false
       property :read_timeout, [Fixnum, nil], default: 60
