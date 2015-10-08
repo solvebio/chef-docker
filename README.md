@@ -224,12 +224,12 @@ the options found in the
 - `source` - URL to the pre-compiled Docker binary used for
   installation. Defaults to a calculated URL based on kernel version,
   Docker version, and platform arch. By default, this will try to get
-  to "http://get.docker.io/builds/".  
+  to "http://get.docker.io/builds/".
 - `version` - Docker version to install
 - `checksum` - sha256 checksum of Docker binary
 - `instance` - Identity for ```docker_service``` resource. Defaults to
   name. Mostly unimportant for the 1.0 version because of its
-  singleton status. | String | nil 
+  singleton status. | String | nil
 - `api_cors_header` - Set CORS headers in the remote API
 - `bridge` - Attach containers to a network bridge
 - `bip` - Specify network bridge IP
@@ -242,9 +242,9 @@ the options found in the
 - `fixed_cidr_v6` - IPv6 subnet for fixed IPs
 - `group` - Posix group for the unix socket
 - `graph` - Root of the Docker runtime - Effectively, the "data
-  directory"  
+  directory"
 - `host` - Daemon socket(s) to connect to - `tcp://host:port`,
-  `unix:///path/to/socket`, `fd://*` or `fd://socketfd`  
+  `unix:///path/to/socket`, `fd://*` or `fd://socketfd`
 - `icc` - Enable inter-container communication
 - `ip` - Enable inter-container communication
 - `ip_forward` - Enable ip forwarding
@@ -572,7 +572,7 @@ This would produce the command:
     --name=logspout \
     -d \
     -h $(hostname) \
-    -v=/var/run/docker.sock:/tmp/docker.sock \  
+    -v=/var/run/docker.sock:/tmp/docker.sock \
     progrium/logspout syslog://logs.papertrailapp.com:999999`
 ```
 
@@ -906,3 +906,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+## SolveBio Hacks
+To make it work with amazon
+
+

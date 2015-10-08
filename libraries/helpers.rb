@@ -2,6 +2,10 @@
 module Docker
   # Docker::Helpers module
   module Helpers
+
+    # see https://github.com/bflad/chef-docker/issues/353
+    include Chef::Mixin::ShellOut
+
     # Exception to signify that the Docker daemon is not yet ready to handle
     # docker commands.
     class DockerNotReady < StandardError
